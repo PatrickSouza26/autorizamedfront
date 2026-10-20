@@ -1,0 +1,315 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+}
+
+.leftPanel {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(16, 52, 107, 0.4) 0%, rgba(6, 26, 64, 0.9) 100%), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem;
+  color: #ffffff;
+  position: relative;
+}
+
+.leftContent {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.title {
+  font-family: var(--font-poppins);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-family: var(--font-inter);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem 1rem;
+  background-color: #ffffff;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 380px;
+  margin: auto 0;
+  padding: 0.5rem 0;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  justify-content: center;
+}
+
+.logoIcon {
+  width: 38px;
+  height: 38px;
+  background-color: #0066CC;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.logoText {
+  font-family: var(--font-poppins);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+}
+
+.formTitle {
+  font-family: var(--font-inter);
+  font-size: 0.95rem;
+  color: #4B5563;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.label {
+  font-family: var(--font-inter);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.625rem 0.85rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.5rem;
+  font-family: var(--font-inter);
+  font-size: 0.875rem;
+  color: #111827;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0066CC;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.passwordToggle:hover {
+  color: #6B7280;
+}
+
+.forgotPassword {
+  display: block;
+  font-family: var(--font-inter);
+  font-size: 0.8125rem;
+  color: #0066CC;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+  text-align: left;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.65rem;
+  background-color: #0066CC;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: var(--font-inter);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #0052A3;
+}
+
+.footer {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-inter);
+  font-size: 0.7125rem;
+  color: #9CA3AF;
+}
+
+/* ===================================================
+   SEÇÃO DE DEMONSTRAÇÃO PARA PORTFÓLIO
+   =================================================== */
+.demoSection {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #F9FAFB 0%, #F5F3FF 100%);
+  border: 1px solid #E9D5FF;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.demoHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.demoTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #EDE9FE;
+  color: #6D28D9;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.demoTitle {
+  font-family: var(--font-poppins);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0;
+}
+
+.demoSubtitle {
+  font-family: var(--font-inter);
+  font-size: 0.7125rem;
+  color: #6B7280;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.35;
+}
+
+.demoGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.demoButton {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-family: var(--font-inter);
+  width: 100%;
+}
+
+.demoButton:hover:not(:disabled) {
+  border-color: #7C3AED;
+  background-color: #FAF5FF;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.1);
+}
+
+.demoButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.demoIconWrapper {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.demoBtnText {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.demoRoleTitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.demoRoleDesc {
+  font-size: 0.68rem;
+  color: #6B7280;
+  line-height: 1.2;
+  margin-top: 0.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+  .demoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftPanel {
+    display: none;
+  }
+}

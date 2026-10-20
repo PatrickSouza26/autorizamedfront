@@ -1,0 +1,146 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .kpiGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .chartsGrid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.chartCard {
+  background-color: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #F3F4F6;
+  display: flex;
+  flex-direction: column;
+}
+
+.chartTitle {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #2C3E50;
+  margin: 0 0 1.5rem 0;
+}
+
+.tableCard {
+  background-color: #FFFFFF;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #F3F4F6;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tableHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.tableTitle {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #2C3E50;
+  margin: 0;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  padding: 0 1.5rem;
+}
+
+.table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  border-bottom: 1px solid #F3F4F6;
+  color: #6B7280;
+  font-family: var(--font-inter);
+  font-size: 0.875rem;
+}
+
+.tableHead th {
+  padding: 1rem 0;
+  font-weight: 500;
+}
+
+.tableBody {
+  font-family: var(--font-inter);
+  font-size: 0.875rem;
+  color: #2C3E50;
+}
+
+.tableRow {
+  border-bottom: 1px solid #F9FAFB;
+  transition: background-color 0.2s;
+}
+
+.tableRow:hover {
+  background-color: rgba(249, 250, 251, 0.5);
+}
+
+.tableCell {
+  padding: 1rem 0;
+  vertical-align: middle;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.badgeAlert {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #E74C3C;
+}
+
+.badgeWarning {
+  background-color: rgba(244, 180, 0, 0.1);
+  color: #F4B400;
+}
+
+.badgeSuccess {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #2ECC71;
+}

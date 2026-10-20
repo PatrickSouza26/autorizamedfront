@@ -1,0 +1,2319 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Ilê Axé Omin — tradição, axé, ancestralidade e comunidade. Conheça nossa casa, nossa história e nossa agenda.">
+
+    <title>Ilê Axé Omin | Tradição, Axé e Ancestralidade</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           VARIÁVEIS
+        ========================================================= */
+
+        :root {
+            --verde: #1F5F45;
+            --verde-escuro: #123C2C;
+            --verde-claro: #2D7658;
+
+            --dourado: #C9A227;
+            --dourado-claro: #E0C15A;
+
+            --marfim: #F8F4EC;
+            --marfim-escuro: #EFE6D8;
+
+            --marrom: #4A3425;
+            --terracota: #B55A30;
+
+            --branco: #FFFFFF;
+            --cinza: #7C7C7C;
+            --texto: #292824;
+
+            --radius: 16px;
+
+            --shadow:
+                0 15px 40px rgba(40, 35, 25, 0.08);
+
+            --transition:
+                0.3s ease;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--texto);
+            background: var(--marfim);
+            line-height: 1.7;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(248, 244, 236, 0.96);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+        }
+
+        .navbar {
+            height: 82px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-symbol {
+            width: 44px;
+            height: 44px;
+
+            border: 2px solid var(--dourado);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--verde);
+            font-size: 20px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-text strong {
+            font-family: "Cinzel", serif;
+            font-size: 17px;
+            letter-spacing: 2px;
+            color: var(--verde);
+        }
+
+        .logo-text span {
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: var(--dourado);
+            margin-top: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--marrom);
+
+            transition: var(--transition);
+
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            bottom: -7px;
+            left: 0;
+
+            width: 0;
+            height: 1px;
+
+            background: var(--dourado);
+
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--verde);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-button {
+            padding: 11px 19px;
+
+            background: var(--verde);
+            color: var(--branco) !important;
+
+            border-radius: 50px;
+
+            transition: var(--transition);
+        }
+
+        .nav-button:hover {
+            background: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(18, 60, 44, 0.94) 0%,
+                    rgba(18, 60, 44, 0.78) 45%,
+                    rgba(18, 60, 44, 0.25) 100%
+                ),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            color: var(--branco);
+
+            padding-top: 80px;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            color: var(--dourado-claro);
+
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-label::before {
+            content: "";
+
+            width: 35px;
+            height: 1px;
+
+            background: var(--dourado);
+        }
+
+        .hero h1 {
+            font-family: "Cinzel", serif;
+
+            font-size: clamp(45px, 7vw, 82px);
+
+            font-weight: 500;
+            line-height: 1.05;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--dourado-claro);
+        }
+
+        .hero p {
+            max-width: 580px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+            line-height: 1.4;
+
+            color: rgba(255,255,255,.9);
+
+            margin-bottom: 38px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 26px;
+
+            border-radius: 50px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--dourado);
+            color: var(--branco);
+        }
+
+        .btn-primary:hover {
+            background: var(--dourado-claro);
+            color: var(--marrom);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.65);
+            color: var(--branco);
+        }
+
+        .btn-outline:hover {
+            background: var(--branco);
+            color: var(--verde);
+        }
+
+
+        /* =========================================================
+           SEÇÕES
+        ========================================================= */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-header {
+            max-width: 680px;
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: var(--dourado);
+
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+
+            display: block;
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-family: "Cinzel", serif;
+
+            font-size: clamp(28px, 4vw, 44px);
+
+            font-weight: 500;
+            line-height: 1.2;
+
+            color: var(--verde-escuro);
+
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            color: var(--cinza);
+            font-size: 15px;
+        }
+
+
+        /* =========================================================
+           SOBRE
+        ========================================================= */
+
+        .about {
+            background: var(--branco);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            height: 560px;
+            border-radius: var(--radius);
+        }
+
+        .about-image::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            border: 1px solid var(--dourado);
+
+            border-radius: var(--radius);
+
+            top: 18px;
+            left: 18px;
+
+            z-index: 0;
+        }
+
+        .about-image img {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text p {
+            color: var(--cinza);
+            margin-bottom: 20px;
+        }
+
+        .about-highlight {
+            margin-top: 35px;
+
+            border-left: 2px solid var(--dourado);
+
+            padding-left: 22px;
+        }
+
+        .about-highlight strong {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+
+            color: var(--verde);
+        }
+
+
+        /* =========================================================
+           NÚMEROS
+        ========================================================= */
+
+        .stats {
+            margin-top: 60px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            border-top: 1px solid var(--marfim-escuro);
+            border-bottom: 1px solid var(--marfim-escuro);
+        }
+
+        .stat {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .stat + .stat {
+            border-left: 1px solid var(--marfim-escuro);
+        }
+
+        .stat strong {
+            display: block;
+
+            font-family: "Cinzel", serif;
+
+            color: var(--verde);
+
+            font-size: 30px;
+        }
+
+        .stat span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cinza);
+        }
+
+
+        /* =========================================================
+           VALORES
+        ========================================================= */
+
+        .values {
+            background: var(--marfim);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .value-card {
+            background: var(--branco);
+
+            padding: 35px 28px;
+
+            border-radius: var(--radius);
+
+            border: 1px solid var(--marfim-escuro);
+
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+
+            border-color: rgba(201,162,39,.4);
+        }
+
+        .value-icon {
+            width: 54px;
+            height: 54px;
+
+            border-radius: 50%;
+
+            background: rgba(31,95,69,.08);
+
+            color: var(--verde);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 23px;
+
+            margin-bottom: 24px;
+        }
+
+        .value-card h3 {
+            font-family: "Cinzel", serif;
+
+            color: var(--verde-escuro);
+
+            font-size: 18px;
+
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 13px;
+            color: var(--cinza);
+        }
+
+
+        /* =========================================================
+           ORIXÁS
+        ========================================================= */
+
+        .orixas {
+            background: var(--verde-escuro);
+        }
+
+        .orixas .section-title {
+            color: var(--branco);
+        }
+
+        .orixas .section-description {
+            color: rgba(255,255,255,.65);
+        }
+
+        .orixa-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .orixa-card {
+            position: relative;
+
+            height: 430px;
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+        }
+
+        .orixa-card img {
+            height: 100%;
+
+            transition: .6s ease;
+        }
+
+        .orixa-card:hover img {
+            transform: scale(1.07);
+        }
+
+        .orixa-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            padding: 28px;
+
+            background:
+                linear-gradient(
+                    transparent 25%,
+                    rgba(0,0,0,.8)
+                );
+
+            color: var(--branco);
+        }
+
+        .orixa-overlay h3 {
+            font-family: "Cinzel", serif;
+
+            font-size: 23px;
+
+            margin-bottom: 5px;
+        }
+
+        .orixa-overlay p {
+            font-size: 12px;
+            opacity: .8;
+        }
+
+
+        /* =========================================================
+           AGENDA
+        ========================================================= */
+
+        .agenda {
+            background: var(--branco);
+        }
+
+        .agenda-grid {
+            display: grid;
+
+            grid-template-columns: 1.2fr .8fr;
+
+            gap: 60px;
+        }
+
+        .event {
+            display: flex;
+
+            gap: 25px;
+
+            padding: 25px 0;
+
+            border-bottom: 1px solid var(--marfim-escuro);
+        }
+
+        .event-date {
+            width: 65px;
+            height: 65px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            background: var(--verde);
+
+            color: var(--branco);
+
+            border-radius: 12px;
+        }
+
+        .event-date strong {
+            font-family: "Cinzel", serif;
+            font-size: 21px;
+            line-height: 1;
+        }
+
+        .event-date span {
+            font-size: 9px;
+            text-transform: uppercase;
+        }
+
+        .event h3 {
+            font-family: "Cinzel", serif;
+
+            font-size: 17px;
+
+            color: var(--verde-escuro);
+
+            margin-bottom: 5px;
+        }
+
+        .event p {
+            color: var(--cinza);
+            font-size: 13px;
+        }
+
+        .calendar-box {
+            background: var(--marfim);
+
+            padding: 40px;
+
+            border-radius: var(--radius);
+        }
+
+        .calendar-box h3 {
+            font-family: "Cinzel", serif;
+
+            color: var(--verde);
+
+            margin-bottom: 15px;
+        }
+
+        .calendar-box p {
+            font-size: 14px;
+            color: var(--cinza);
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================================
+           GALERIA
+        ========================================================= */
+
+        .gallery {
+            background: var(--marfim);
+        }
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            grid-auto-rows: 220px;
+
+            gap: 12px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+
+            border-radius: 12px;
+        }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            height: 100%;
+
+            transition: .5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+
+        /* =========================================================
+           DEPOIMENTOS
+        ========================================================= */
+
+        .testimonials {
+            background: var(--branco);
+        }
+
+        .testimonial-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .testimonial {
+            padding: 35px;
+
+            border-radius: var(--radius);
+
+            background: var(--marfim);
+
+            border: 1px solid var(--marfim-escuro);
+        }
+
+        .quote {
+            color: var(--dourado);
+
+            font-family: Georgia, serif;
+
+            font-size: 42px;
+
+            line-height: 1;
+
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 20px;
+
+            color: var(--marrom);
+
+            line-height: 1.45;
+
+            margin-bottom: 25px;
+        }
+
+        .testimonial strong {
+            font-size: 13px;
+            color: var(--verde);
+        }
+
+
+        /* =========================================================
+           CONTATO
+        ========================================================= */
+
+        .contact {
+            background: var(--verde);
+            color: var(--branco);
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+        }
+
+        .contact .section-title {
+            color: var(--branco);
+        }
+
+        .contact .section-description {
+            color: rgba(255,255,255,.7);
+        }
+
+        .contact-info {
+            margin-top: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+
+            gap: 18px;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+
+            flex-shrink: 0;
+
+            border: 1px solid rgba(255,255,255,.3);
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--dourado-claro);
+        }
+
+        .contact-item span {
+            display: block;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            color: rgba(255,255,255,.5);
+        }
+
+        .contact-item strong {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .map {
+            min-height: 420px;
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(18,60,44,.35),
+                    rgba(18,60,44,.35)
+                ),
+                url("https://images.unsplash.com/photo-1524666041070-9f8767b3d0c2?auto=format&fit=crop&w=1200&q=80");
+
+            background-size: cover;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-box {
+            background: rgba(255,255,255,.94);
+
+            color: var(--marrom);
+
+            padding: 25px 35px;
+
+            text-align: center;
+
+            border-radius: 12px;
+        }
+
+        .map-box strong {
+            display: block;
+
+            font-family: "Cinzel", serif;
+
+            color: var(--verde);
+
+            margin-bottom: 5px;
+        }
+
+        .map-box span {
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #0D2C20;
+
+            color: rgba(255,255,255,.65);
+
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 45px;
+
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .footer-logo {
+            margin-bottom: 18px;
+        }
+
+        .footer-logo strong {
+            display: block;
+
+            font-family: "Cinzel", serif;
+
+            color: var(--branco);
+
+            letter-spacing: 3px;
+        }
+
+        .footer-logo span {
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            color: var(--dourado);
+        }
+
+        .footer-about {
+            font-size: 13px;
+
+            max-width: 330px;
+        }
+
+        footer h4 {
+            color: var(--branco);
+
+            font-family: "Cinzel", serif;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--dourado-claro);
+        }
+
+        .copyright {
+            padding-top: 22px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================================
+           MENU MOBILE
+        ========================================================= */
+
+        .menu-toggle {
+            display: none;
+
+            border: none;
+
+            background: none;
+
+            font-size: 28px;
+
+            color: var(--verde);
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           RESPONSIVIDADE
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 82px;
+                left: 0;
+
+                width: 100%;
+
+                background: var(--marfim);
+
+                padding: 25px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 18px;
+
+                display: none;
+
+                border-bottom: 1px solid var(--marfim-escuro);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .about-grid,
+            .agenda-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .orixa-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 21px;
+            }
+
+            .about-image img {
+                height: 400px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat + .stat {
+                border-left: none;
+                border-top: 1px solid var(--marfim-escuro);
+            }
+
+            .values-grid,
+            .orixa-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .orixa-card {
+                height: 380px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+
+                grid-auto-rows: 160px;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .copyright {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     HEADER
+============================================================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#inicio" class="logo">
+
+            <div class="logo-symbol">
+                ◉
+            </div>
+
+            <div class="logo-text">
+                <strong>ILÊ AXÉ OMIN</strong>
+                <span>CASA DE AXÉ</span>
+            </div>
+
+        </a>
+
+
+        <nav>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+
+                <li>
+                    <a href="#casa">A Casa</a>
+                </li>
+
+                <li>
+                    <a href="#valores">Valores</a>
+                </li>
+
+                <li>
+                    <a href="#orixas">Orixás</a>
+                </li>
+
+                <li>
+                    <a href="#agenda">Agenda</a>
+                </li>
+
+                <li>
+                    <a href="#galeria">Galeria</a>
+                </li>
+
+                <li>
+                    <a href="#contato" class="nav-button">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =============================================================
+     HERO
+============================================================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                Casa de Axé
+            </span>
+
+            <h1>
+                Ilê Axé<br>
+                <span>Omin</span>
+            </h1>
+
+            <p>
+                Tradição, ancestralidade e axé em uma comunidade
+                construída pelo respeito, pela fé e pela conexão
+                com a natureza.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#casa" class="btn btn-primary">
+                    Conheça nossa história
+                </a>
+
+                <a href="#agenda" class="btn btn-outline">
+                    Ver agenda
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     SOBRE A CASA
+============================================================= -->
+
+<section class="about" id="casa">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=85"
+                    alt="Natureza representando a conexão ancestral"
+                >
+
+            </div>
+
+
+            <div class="about-text">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Nossa história
+                    </span>
+
+                    <h2 class="section-title">
+                        Um espaço de tradição e acolhimento
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    O Ilê Axé Omin é uma casa dedicada à preservação
+                    das tradições do Candomblé, ao culto aos Orixás
+                    e à transmissão dos conhecimentos ancestrais.
+                </p>
+
+                <p>
+                    Nossa comunidade busca manter viva a sabedoria
+                    dos mais velhos, o respeito à natureza e os
+                    valores que atravessam gerações.
+                </p>
+
+                <p>
+                    Aqui, cada pessoa é recebida com respeito,
+                    responsabilidade e acolhimento.
+                </p>
+
+
+                <div class="about-highlight">
+
+                    <strong>
+                        "Axé é força, movimento e vida."
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <strong>20+</strong>
+
+                <span>
+                    Anos de tradição
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>∞</strong>
+
+                <span>
+                    Saberes ancestrais
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>1</strong>
+
+                <span>
+                    Comunidade
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     VALORES
+============================================================= -->
+
+<section class="values" id="valores">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-label">
+                Nossos valores
+            </span>
+
+            <h2 class="section-title">
+                O que guia nossa caminhada
+            </h2>
+
+            <p class="section-description">
+                Nossa casa é construída diariamente através
+                do respeito às tradições, às pessoas e à natureza.
+            </p>
+
+        </div>
+
+
+        <div class="values-grid">
+
+
+            <article class="value-card">
+
+                <div class="value-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    Respeito
+                </h3>
+
+                <p>
+                    Respeito aos Orixás, aos ancestrais,
+                    aos mais velhos e a cada pessoa que
+                    chega à nossa comunidade.
+                </p>
+
+            </article>
+
+
+            <article class="value-card">
+
+                <div class="value-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    Comunidade
+                </h3>
+
+                <p>
+                    Uma comunidade construída através
+                    da união, da responsabilidade e
+                    do cuidado coletivo.
+                </p>
+
+            </article>
+
+
+            <article class="value-card">
+
+                <div class="value-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Axé
+                </h3>
+
+                <p>
+                    A força vital que movimenta a vida,
+                    os encontros e a nossa caminhada
+                    espiritual.
+                </p>
+
+            </article>
+
+
+            <article class="value-card">
+
+                <div class="value-icon">
+                    💧
+                </div>
+
+                <h3>
+                    Natureza
+                </h3>
+
+                <p>
+                    Reconhecemos a natureza como parte
+                    fundamental da nossa tradição e
+                    dos nossos saberes.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     ORIXÁS
+============================================================= -->
+
+<section class="orixas" id="orixas">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-label">
+                Tradição
+            </span>
+
+            <h2 class="section-title">
+                Orixás
+            </h2>
+
+            <p class="section-description">
+                Conheça um pouco mais sobre as divindades
+                cultuadas dentro das tradições de matriz africana.
+            </p>
+
+        </div>
+
+
+        <div class="orixa-grid">
+
+
+            <article class="orixa-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=800&q=80"
+                    alt="Água representando Oxum"
+                >
+
+                <div class="orixa-overlay">
+
+                    <h3>
+                        Oxum
+                    </h3>
+
+                    <p>
+                        Águas doces, beleza, fertilidade e prosperidade.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="orixa-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+                    alt="Natureza representando Iemanjá"
+                >
+
+                <div class="orixa-overlay">
+
+                    <h3>
+                        Iemanjá
+                    </h3>
+
+                    <p>
+                        Águas, maternidade e proteção.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="orixa-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+                    alt="Floresta representando Ossain"
+                >
+
+                <div class="orixa-overlay">
+
+                    <h3>
+                        Ossain
+                    </h3>
+
+                    <p>
+                        Folhas, natureza e conhecimento das ervas.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="orixa-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80"
+                    alt="Árvore representando a ancestralidade"
+                >
+
+                <div class="orixa-overlay">
+
+                    <h3>
+                        Xangô
+                    </h3>
+
+                    <p>
+                        Justiça, equilíbrio e força.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     AGENDA
+============================================================= -->
+
+<section class="agenda" id="agenda">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-label">
+                Programação
+            </span>
+
+            <h2 class="section-title">
+                Agenda da casa
+            </h2>
+
+            <p class="section-description">
+                Acompanhe as próximas atividades abertas
+                à comunidade.
+            </p>
+
+        </div>
+
+
+        <div class="agenda-grid">
+
+
+            <div>
+
+
+                <div class="event">
+
+                    <div class="event-date">
+
+                        <strong>
+                            12
+                        </strong>
+
+                        <span>
+                            Out
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Celebração de Oxum
+                        </h3>
+
+                        <p>
+                            19h00 · Consulte previamente a casa
+                            sobre participação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="event">
+
+                    <div class="event-date">
+
+                        <strong>
+                            25
+                        </strong>
+
+                        <span>
+                            Out
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Encontro da comunidade
+                        </h3>
+
+                        <p>
+                            16h00 · Atividade comunitária.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="event">
+
+                    <div class="event-date">
+
+                        <strong>
+                            08
+                        </strong>
+
+                        <span>
+                            Nov
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Atividade da casa
+                        </h3>
+
+                        <p>
+                            Horário e informações em breve.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="calendar-box">
+
+                <h3>
+                    Antes de visitar
+                </h3>
+
+                <p>
+                    Algumas atividades possuem acesso restrito
+                    ou exigem orientação prévia. Entre em contato
+                    com a casa para confirmar horários e condições
+                    de participação.
+                </p>
+
+                <a href="#contato" class="btn btn-primary">
+                    Entrar em contato
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     GALERIA
+============================================================= -->
+
+<section class="gallery" id="galeria">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-label">
+                Nossa casa
+            </span>
+
+            <h2 class="section-title">
+                Momentos e memórias
+            </h2>
+
+            <p class="section-description">
+                Um pouco da nossa comunidade, dos nossos espaços
+                e da conexão com a natureza.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85"
+                    alt="Floresta"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+                    alt="Natureza"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80"
+                    alt="Árvore"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+                    alt="Paisagem natural"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+                    alt="Floresta"
+                >
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     DEPOIMENTOS
+============================================================= -->
+
+<section class="testimonials">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-label">
+                Comunidade
+            </span>
+
+            <h2 class="section-title">
+                Palavras de quem caminha conosco
+            </h2>
+
+        </div>
+
+
+        <div class="testimonial-grid">
+
+
+            <article class="testimonial">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    Um lugar onde encontrei acolhimento,
+                    respeito e pessoas dispostas a compartilhar
+                    seus conhecimentos.
+                </p>
+
+                <strong>
+                    — Membro da comunidade
+                </strong>
+
+            </article>
+
+
+            <article class="testimonial">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    A casa representa para mim conexão,
+                    ancestralidade e respeito pela natureza.
+                </p>
+
+                <strong>
+                    — Membro da comunidade
+                </strong>
+
+            </article>
+
+
+            <article class="testimonial">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    Um espaço de aprendizado e de fortalecimento
+                    dos laços entre as pessoas.
+                </p>
+
+                <strong>
+                    — Membro da comunidade
+                </strong>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     CONTATO
+============================================================= -->
+
+<section class="contact" id="contato">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <div>
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Fale conosco
+                    </span>
+
+                    <h2 class="section-title">
+                        Será uma alegria receber você
+                    </h2>
+
+                    <p class="section-description">
+                        Entre em contato para saber mais sobre
+                        nossa casa, nossa agenda e as orientações
+                        para visitantes.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-info">
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Endereço
+                            </span>
+
+                            <strong>
+                                Rua da Casa de Axé, 123
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Telefone
+                            </span>
+
+                            <strong>
+                                (22) 99999-9999
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ✉
+                        </div>
+
+                        <div>
+
+                            <span>
+                                E-mail
+                            </span>
+
+                            <strong>
+                                contato@ileaxeomin.com.br
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="map">
+
+                <div class="map-box">
+
+                    <strong>
+                        Ilê Axé Omin
+                    </strong>
+
+                    <span>
+                        Localização da nossa casa
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     FOOTER
+============================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="footer-logo">
+
+                    <strong>
+                        ILÊ AXÉ OMIN
+                    </strong>
+
+                    <span>
+                        CASA DE AXÉ
+                    </span>
+
+                </div>
+
+                <p class="footer-about">
+                    Tradição, ancestralidade, respeito e
+                    comunidade. Uma casa construída para
+                    preservar e compartilhar saberes.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Navegação
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#inicio">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#casa">
+                            A Casa
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#orixas">
+                            Orixás
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#agenda">
+                            Agenda
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Comunidade
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#valores">
+                            Nossos valores
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#galeria">
+                            Galeria
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">
+                            Visite a casa
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Redes sociais
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#">
+                            Instagram
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Facebook
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            WhatsApp
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © 2026 Ilê Axé Omin. Todos os direitos reservados.
+            </span>
+
+            <span>
+                Feito com respeito à tradição e à ancestralidade.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =============================================================
+     JAVASCRIPT
+============================================================= -->
+
+<script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+    /*
+     * Pequeno efeito no header ao rolar a página
+     */
+
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 50) {
+
+            header.style.boxShadow =
+                "0 5px 25px rgba(40,35,25,.08)";
+
+        } else {
+
+            header.style.boxShadow = "none";
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>
+```

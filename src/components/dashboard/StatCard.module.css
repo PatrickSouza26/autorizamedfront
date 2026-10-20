@@ -1,0 +1,53 @@
+.cardStat {
+  background-color: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #F3F4F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardStatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardStatIcon {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.cardStatBody {
+  margin-top: 1rem;
+}
+
+.cardStatValue {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 1.875rem;
+  color: #2C3E50;
+  margin: 0;
+}
+
+.cardStatLabel {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  color: #6B7280;
+  margin: 0;
+}
+
+.cardStatLink {
+  font-family: var(--font-inter);
+  font-size: 0.875rem;
+  color: #0066CC;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.cardStatLink:hover {
+  text-decoration: underline;
+}

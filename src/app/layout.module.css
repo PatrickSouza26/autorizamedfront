@@ -1,0 +1,20 @@
+.layoutContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.pageScroll {
+  flex: 1;
+  overflow-y: auto;
+}
