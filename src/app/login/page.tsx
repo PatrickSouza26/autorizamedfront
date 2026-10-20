@@ -153,7 +153,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 className={styles.demoButton}
-                onClick={() => handleQuickLogin('clinica', '123456', 'prestador', '/solicitacoes')}
+                onClick={() => handleQuickLogin('clinica', '123456', 'prestador', '/')}
                 disabled={loading}
               >
                 <div className={styles.demoIconWrapper} style={{ backgroundColor: '#E0F2FE', color: '#0284C7' }}>

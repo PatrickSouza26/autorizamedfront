@@ -44,7 +44,7 @@ const DEMO_PROFILES = [
     icon: Building2,
     color: '#0D9488',
     bg: '#CCFBF1',
-    redirect: '/solicitacoes'
+    redirect: '/'
   },
   {
     role: 'ADMIN',

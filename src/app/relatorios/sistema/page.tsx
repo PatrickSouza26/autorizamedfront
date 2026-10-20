@@ -30,8 +30,18 @@ export default function AuditoriaSistema() {
   
   // Filter state
   const [searchTerm, setSearchTerm] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
   const [selectedAcao, setSelectedAcao] = useState('');
   const [selectedEntidade, setSelectedEntidade] = useState('');
+
+  // Debounce para evitar requisições a cada tecla
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(searchTerm);
+      setCurrentPage(1);
+    }, 350);
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
 
   const loadLogs = async () => {
     try {
@@ -42,30 +52,27 @@ export default function AuditoriaSistema() {
         size: itemsPerPage.toString()
       });
 
-      if (searchTerm) params.append('pesquisa', searchTerm);
+      if (debouncedSearch) params.append('pesquisa', debouncedSearch);
       if (selectedAcao) params.append('acao', selectedAcao);
       if (selectedEntidade) params.append('tipoEntidade', selectedEntidade);
 
       const response = await api.get(`/auditoria?${params.toString()}`);
       
-      const data = response.content || response.data?.content || response;
-      if (Array.isArray(data)) {
-         setLogs(data);
-      } else if (response.content) {
-         setLogs(response.content);
-      }
+      const data = response?.content || response?.data?.content || (Array.isArray(response) ? response : []);
+      setLogs(Array.isArray(data) ? data : []);
       
-      // Update pagination info if available in response
-      if (response.totalPages !== undefined) {
-        setTotalPages(response.totalPages);
-        setTotalElements(response.totalElements);
-      } else if (response.data?.totalPages !== undefined) {
-        setTotalPages(response.data.totalPages);
-        setTotalElements(response.data.totalElements);
-      }
+      // Suporte ao Spring Boot 3/4 (response.page) e formatos legados
+      const totalP = response?.page?.totalPages ?? response?.totalPages ?? response?.data?.totalPages ?? 1;
+      const totalE = response?.page?.totalElements ?? response?.totalElements ?? response?.data?.totalElements ?? (Array.isArray(data) ? data.length : 0);
+      
+      setTotalPages(Math.max(1, totalP));
+      setTotalElements(totalE);
       
     } catch (error) {
       console.error("Erro ao carregar logs de auditoria:", error);
+      setLogs([]);
+      setTotalPages(1);
+      setTotalElements(0);
     } finally {
       setLoading(false);
     }
@@ -73,7 +80,7 @@ export default function AuditoriaSistema() {
 
   useEffect(() => {
     loadLogs();
-  }, [currentPage, searchTerm, selectedAcao, selectedEntidade]);
+  }, [currentPage, debouncedSearch, selectedAcao, selectedEntidade]);
 
   const formatDate = (dateString: string) => {
     if (!dateString) return '-';

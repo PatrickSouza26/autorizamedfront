@@ -20,9 +20,9 @@ export default function RankingAuditoresPage() {
         setLoading(true);
         // Considerando que a API usa paginação 0-indexed
         const res = await api.get(`/relatorios/operacional/auditores?pagina=${currentPage - 1}&tamanho=${itemsPerPage}`);
-        setData(res.content || []);
-        setTotalPages(res.totalPages || 1);
-        setTotalElements(res.totalElements || 0);
+        setData(res.content || res.data?.content || []);
+        setTotalPages(res.page?.totalPages ?? res.totalPages ?? 1);
+        setTotalElements(res.page?.totalElements ?? res.totalElements ?? 0);
       } catch (error) {
         console.error('Erro ao buscar ranking de auditores:', error);
       } finally {
